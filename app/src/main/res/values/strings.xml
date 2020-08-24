@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Exam Prepare</string>
+    <string name="app_name">Exam Timer</string>
     <string name="title_activity_home">HomeActivity</string>
 </resources>
