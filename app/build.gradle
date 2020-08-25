@@ -15,7 +15,13 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            // TODO: Enable these only during final build
+            /*minifyEnabled true
+            shrinkResources true*/
+
+            // TODO: Disable this only during final build
+            minfiyEnabled false
+
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
