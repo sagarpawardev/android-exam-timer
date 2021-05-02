@@ -3,7 +3,6 @@ package dev.sagar.examtimer;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -18,6 +17,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import dev.sagar.examtimer.utils.CountUpTimer;
 
 import java.text.SimpleDateFormat;
+import java.util.Locale;
 import java.util.TimeZone;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
     private CountUpTimer prevTimer = null;
     private CountUpTimer[] timers;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Default Counter
         int count = 10;
         Bundle basket = getIntent().getExtras();
         if (basket != null) {
@@ -41,63 +41,55 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout parent = findViewById(R.id.grid_view);
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
 
+        // Setup Fab
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(prevTimer!= null && prevTimer.isRunning) {
-                    prevTimer.pause();
-                }
-                prepareFinish();
+        fab.setOnClickListener(view -> {
+            if(prevTimer!= null && prevTimer.isRunning) {
+                prevTimer.pause();
             }
+            prepareFinish();
         });
 
-        for(int i=1; i<=count; i+=2){
-            View child = inflater.inflate(R.layout.inner_grid, null);
-            View grid1 = child.findViewById(R.id.grid1);
+        // Setup Grid Rows
+        for(int qNo=1; qNo<=count; qNo+=2){
+            View gridRow = inflater.inflate(R.layout.inner_grid, parent, false);
 
-            TextView tv1 = child.findViewById(R.id.tv_q_number);
-            TextView tvt1 = child.findViewById(R.id.tv_time);
-            String strQNo = String.valueOf(i);
-            tv1.setText(strQNo);
-            CountUpTimer timer1 = new CountUpTimer(this, tvt1);
+            // Prepare Grid 1
+            View grid1 = gridRow.findViewById(R.id.grid1);
+            TextView tvQNo1 = gridRow.findViewById(R.id.tv_q_number);
+            TextView tvTime1 = gridRow.findViewById(R.id.tv_time);
+            tvQNo1.setText(String.valueOf(qNo));
+            CountUpTimer timer1 = new CountUpTimer(this, tvTime1);
             grid1.setOnClickListener(new TimerOnClickListener(timer1));
-            timers[i-1] = timer1;
+            timers[qNo-1] = timer1;
 
-            View grid2 = child.findViewById(R.id.grid2);
-            if(i+1<=count) {
-                //TextView 2
-                TextView tv2 = child.findViewById(R.id.tv_q_number2);
-                TextView tvt2 = child.findViewById(R.id.tv_time2);
-                strQNo = String.valueOf(i + 1);
-                tv2.setText(strQNo);
-                CountUpTimer timer2 = new CountUpTimer(this, tvt2);
+            // Prepare Grid 2
+            View grid2 = gridRow.findViewById(R.id.grid2);
+            if(qNo+1<=count) {
+                TextView tvQNo2 = gridRow.findViewById(R.id.tv_q_number2);
+                TextView tvTime2 = gridRow.findViewById(R.id.tv_time2);
+                tvQNo2.setText(String.valueOf(qNo + 1));
+                CountUpTimer timer2 = new CountUpTimer(this, tvTime2);
                 grid2.setOnClickListener(new TimerOnClickListener(timer2));
-                timers[i] = timer2;
+                timers[qNo] = timer2;
             }
             else{
                 grid2.setVisibility(View.GONE);
             }
 
-            parent.addView(child);
+            parent.addView(gridRow);
         }
-
-        /*grid.setNumColumns(2);
-        grid.setHorizontalSpacing(23);
-        MyGridAdapter adapter = new MyGridAdapter(this, 16);
-        grid.setAdapter(adapter);*/
     }
 
 
     class TimerOnClickListener implements View.OnClickListener {
-        private CountUpTimer timer;
+        private final CountUpTimer timer;
         private TimerOnClickListener(CountUpTimer timer){
             this.timer = timer;
         }
 
         @Override
         public void onClick(View view) {
-            Log.i("My Tag", "Clicked");
             if (timer.isRunning) {
                 timer.pause();
                 Toast.makeText(MainActivity.this, "Paused...", Toast.LENGTH_SHORT).show();
@@ -107,14 +99,13 @@ public class MainActivity extends AppCompatActivity {
                 }
                 prevTimer = timer;
                 timer.start();
-                //Toast.makeText(MainActivity.this, "Running...", Toast.LENGTH_SHORT).show();
             }
         }
     }
 
     public void prepareFinish(){
         StringBuilder builder = new StringBuilder();
-        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
         format.setTimeZone(TimeZone.getTimeZone("UTC"));
 
         for(int i=0; i<timers.length; i++){
@@ -130,7 +121,6 @@ public class MainActivity extends AppCompatActivity {
                 "mailto","", null));
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
         emailIntent.putExtra(Intent.EXTRA_TEXT, text);
-        //startActivity(Intent.createChooser(emailIntent, "Send email..."));
 
         finish();
         startActivity(Intent.createChooser(emailIntent, "Send Email Using: "));
@@ -138,6 +128,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        //super.onBackPressed();
+
     }
 }

@@ -7,37 +7,40 @@ import android.graphics.drawable.Drawable;
 import android.os.CountDownTimer;
 import android.widget.TextView;
 
+import androidx.core.content.res.ResourcesCompat;
+
 import dev.sagar.examtimer.R;
 
 import java.text.SimpleDateFormat;
+import java.util.Locale;
 import java.util.TimeZone;
 
 public class CountUpTimer {
-    private Context context;
-    long timeLeft = 0;
-    long timeSpent = 0;
-    private SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+    long timeLeft;
+    long timeSpent;
+    private final SimpleDateFormat format;
 
     final long MAX_TIME = 3*60*60*1000;
     public boolean isRunning = false;
-    private TextView tvTime;
+    private final TextView tvTime;
 
     CountDownTimer timer = null;
-    private Drawable drawablePlay, drawablePause;
+    private final Drawable drawablePlay, drawablePause;
+
     public CountUpTimer(Context context, TextView tv){
+        format = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
         format.setTimeZone(TimeZone.getTimeZone("UTC"));
         timeLeft = MAX_TIME;
         timeSpent = 0;
-        this.context = context;
         this.tvTime = tv;
 
         String strTime = format.format(timeSpent);
         tvTime.setText(strTime);
 
-        drawablePlay = context.getResources().getDrawable(R.drawable.round_play_arrow_24, null);
+        drawablePlay = ResourcesCompat.getDrawable(context.getResources(), R.drawable.round_play_arrow_24, null);
         drawablePlay.setBounds( 0, 0, 60, 60 );
         drawablePlay.setTint(Color.GREEN);
-        drawablePause = context.getResources().getDrawable(R.drawable.round_pause_24, null);
+        drawablePause = ResourcesCompat.getDrawable(context.getResources(), R.drawable.round_pause_24, null);
         drawablePause.setBounds( 0, 0, 60, 60 );
         drawablePause.setColorFilter(Color.parseColor("#1565C0") ,PorterDuff.Mode.MULTIPLY);
     }
