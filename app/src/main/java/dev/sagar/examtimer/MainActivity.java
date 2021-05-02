@@ -3,6 +3,7 @@ package dev.sagar.examtimer;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -15,8 +16,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import dev.sagar.examtimer.utils.CountUpTimer;
+import dev.sagar.examtimer.utils.HtmlContentUtil;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Locale;
 import java.util.TimeZone;
 
@@ -57,9 +61,8 @@ public class MainActivity extends AppCompatActivity {
             // Prepare Grid 1
             View grid1 = gridRow.findViewById(R.id.grid1);
             TextView tvQNo1 = gridRow.findViewById(R.id.tv_q_number);
-            TextView tvTime1 = gridRow.findViewById(R.id.tv_time);
             tvQNo1.setText(String.valueOf(qNo));
-            CountUpTimer timer1 = new CountUpTimer(this, tvTime1);
+            CountUpTimer timer1 = new CountUpTimer(this, grid1);
             grid1.setOnClickListener(new TimerOnClickListener(timer1));
             timers[qNo-1] = timer1;
 
@@ -67,9 +70,8 @@ public class MainActivity extends AppCompatActivity {
             View grid2 = gridRow.findViewById(R.id.grid2);
             if(qNo+1<=count) {
                 TextView tvQNo2 = gridRow.findViewById(R.id.tv_q_number2);
-                TextView tvTime2 = gridRow.findViewById(R.id.tv_time2);
                 tvQNo2.setText(String.valueOf(qNo + 1));
-                CountUpTimer timer2 = new CountUpTimer(this, tvTime2);
+                CountUpTimer timer2 = new CountUpTimer(this, grid2);
                 grid2.setOnClickListener(new TimerOnClickListener(timer2));
                 timers[qNo] = timer2;
             }
@@ -115,7 +117,8 @@ public class MainActivity extends AppCompatActivity {
             builder.append(text);
         }
 
-        String text = builder.toString();
+        //String text = builder.toString();
+        String text = new HtmlContentUtil().createTimerTable(Arrays.asList(timers));
         String subject = "Results";
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
                 "mailto","", null));

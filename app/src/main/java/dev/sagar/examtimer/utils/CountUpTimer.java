@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.CountDownTimer;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.core.content.res.ResourcesCompat;
@@ -23,23 +24,34 @@ public class CountUpTimer {
     final long MAX_TIME = 3*60*60*1000;
     public boolean isRunning = false;
     private final TextView tvTime;
+    private final View grid;
+    private final int greenColor, orangeColor;
 
     CountDownTimer timer = null;
     private final Drawable drawablePlay, drawablePause;
 
-    public CountUpTimer(Context context, TextView tv){
+    public CountUpTimer(Context context, View grid){
         format = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
+        this.greenColor = ResourcesCompat.getColor(context.getResources(), R.color.greenColor, null);
+        this.orangeColor = ResourcesCompat.getColor(context.getResources(), R.color.orangeColor, null);
         format.setTimeZone(TimeZone.getTimeZone("UTC"));
         timeLeft = MAX_TIME;
         timeSpent = 0;
-        this.tvTime = tv;
+        this.grid = grid;
+
+        if(grid.findViewById(R.id.tv_time) != null){
+            this.tvTime = grid.findViewById(R.id.tv_time);
+        }
+        else{
+            this.tvTime = grid.findViewById(R.id.tv_time2);
+        }
 
         String strTime = format.format(timeSpent);
         tvTime.setText(strTime);
 
         drawablePlay = ResourcesCompat.getDrawable(context.getResources(), R.drawable.round_play_arrow_24, null);
         drawablePlay.setBounds( 0, 0, 60, 60 );
-        drawablePlay.setTint(Color.GREEN);
+        drawablePlay.setTint(greenColor);
         drawablePause = ResourcesCompat.getDrawable(context.getResources(), R.drawable.round_pause_24, null);
         drawablePause.setBounds( 0, 0, 60, 60 );
         drawablePause.setColorFilter(Color.parseColor("#1565C0") ,PorterDuff.Mode.MULTIPLY);
@@ -47,6 +59,8 @@ public class CountUpTimer {
 
     public void start(){
         isRunning = true;
+        this.grid.setBackgroundColor(orangeColor);
+
         timer = new CountDownTimer(timeLeft, 1000) {
             @Override
             public void onTick(long l) {
@@ -73,6 +87,7 @@ public class CountUpTimer {
         timer.cancel();
         timer = null;
         isRunning = false;
+        this.grid.setBackgroundColor(greenColor);
         tvTime.setCompoundDrawables(drawablePause, null, null, null);
     }
 

@@ -11,11 +11,17 @@
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed680d4c-32ba-4f8b-b505-85362959e49f" name="Default Changelist" comment="chore: code clean up">
+    <list default="true" id="ed680d4c-32ba-4f8b-b505-85362959e49f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/utils/HtmlContentUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_launcher_round.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/adapter/MyGridAdapter.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/utils/CountUpTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/utils/CountUpTimer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +46,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -52,6 +65,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-mdpi" />
     <property name="memory.settings.postsync.last.time.stamp" value="1619965299574" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.17" />
@@ -59,6 +73,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-mdpi" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/.idea" />
     </key>
@@ -201,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619966629843</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="chore: code clean up">
+      <created>1619970391776</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1619970391776</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -224,45 +248,80 @@
     </state>
     <state x="0" y="28" width="1440" height="817" key="#Project_Structure/0.0.1440.900@0.0.1440.900" timestamp="1619961855282" />
     <state x="208" y="25" width="1024" height="817" key="#Project_Structure/0.25.1440.817@0.25.1440.817" timestamp="1619957714199" />
-    <state x="278" y="25" key="CommitChangelistDialog2" timestamp="1619970261787">
+    <state x="887" y="110" key="#xdebugger.evaluate" timestamp="1619975734219">
       <screen x="0" y="25" width="1440" height="817" />
     </state>
-    <state x="278" y="25" key="CommitChangelistDialog2/0.25.1440.817@0.25.1440.817" timestamp="1619970261787" />
+    <state x="887" y="110" key="#xdebugger.evaluate/0.25.1440.817@0.25.1440.817" timestamp="1619975734219" />
+    <state x="278" y="25" key="CommitChangelistDialog2" timestamp="1619970391578">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state x="278" y="25" key="CommitChangelistDialog2/0.25.1440.817@0.25.1440.817" timestamp="1619970391578" />
     <state x="144" y="93" key="DiffContextDialog" timestamp="1619968679383">
       <screen x="0" y="25" width="1440" height="817" />
     </state>
     <state x="144" y="93" key="DiffContextDialog/0.25.1440.817@0.25.1440.817" timestamp="1619968679383" />
-    <state width="1396" height="167" key="GridCell.Tab.0.bottom" timestamp="1619970261860">
+    <state width="1396" height="209" key="GridCell.Tab.0.bottom" timestamp="1619976721159">
       <screen x="0" y="25" width="1440" height="817" />
     </state>
-    <state width="1396" height="167" key="GridCell.Tab.0.bottom/0.25.1440.817@0.25.1440.817" timestamp="1619970261860" />
-    <state width="1396" height="167" key="GridCell.Tab.0.center" timestamp="1619970261860">
+    <state width="1396" height="209" key="GridCell.Tab.0.bottom/0.25.1440.817@0.25.1440.817" timestamp="1619976721159" />
+    <state width="1396" height="209" key="GridCell.Tab.0.center" timestamp="1619976721159">
       <screen x="0" y="25" width="1440" height="817" />
     </state>
-    <state width="1396" height="167" key="GridCell.Tab.0.center/0.25.1440.817@0.25.1440.817" timestamp="1619970261860" />
-    <state width="1396" height="167" key="GridCell.Tab.0.left" timestamp="1619970261859">
+    <state width="1396" height="209" key="GridCell.Tab.0.center/0.25.1440.817@0.25.1440.817" timestamp="1619976721159" />
+    <state width="1396" height="209" key="GridCell.Tab.0.left" timestamp="1619976721158">
       <screen x="0" y="25" width="1440" height="817" />
     </state>
-    <state width="1396" height="167" key="GridCell.Tab.0.left/0.25.1440.817@0.25.1440.817" timestamp="1619970261859" />
-    <state width="1396" height="167" key="GridCell.Tab.0.right" timestamp="1619970261860">
+    <state width="1396" height="209" key="GridCell.Tab.0.left/0.25.1440.817@0.25.1440.817" timestamp="1619976721158" />
+    <state width="1396" height="209" key="GridCell.Tab.0.right" timestamp="1619976721159">
       <screen x="0" y="25" width="1440" height="817" />
     </state>
-    <state width="1396" height="167" key="GridCell.Tab.0.right/0.25.1440.817@0.25.1440.817" timestamp="1619970261860" />
+    <state width="1396" height="209" key="GridCell.Tab.0.right/0.25.1440.817@0.25.1440.817" timestamp="1619976721159" />
+    <state width="1396" height="209" key="GridCell.Tab.1.bottom" timestamp="1619975744417">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state width="1396" height="209" key="GridCell.Tab.1.bottom/0.25.1440.817@0.25.1440.817" timestamp="1619975744417" />
+    <state width="1396" height="209" key="GridCell.Tab.1.center" timestamp="1619975744416">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state width="1396" height="209" key="GridCell.Tab.1.center/0.25.1440.817@0.25.1440.817" timestamp="1619975744416" />
+    <state width="1396" height="209" key="GridCell.Tab.1.left" timestamp="1619975744416">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state width="1396" height="209" key="GridCell.Tab.1.left/0.25.1440.817@0.25.1440.817" timestamp="1619975744416" />
+    <state width="1396" height="209" key="GridCell.Tab.1.right" timestamp="1619975744417">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state width="1396" height="209" key="GridCell.Tab.1.right/0.25.1440.817@0.25.1440.817" timestamp="1619975744417" />
     <state x="221" y="69" key="SettingsEditor" timestamp="1619959229083">
       <screen x="0" y="25" width="1440" height="817" />
     </state>
     <state x="221" y="69" key="SettingsEditor/0.25.1440.817@0.25.1440.817" timestamp="1619959229083" />
-    <state x="320" y="170" key="Vcs.Push.Dialog.v2" timestamp="1619966636850">
+    <state x="320" y="170" key="Vcs.Push.Dialog.v2" timestamp="1619970395868">
       <screen x="0" y="25" width="1440" height="817" />
     </state>
-    <state x="320" y="170" key="Vcs.Push.Dialog.v2/0.25.1440.817@0.25.1440.817" timestamp="1619966636850" />
+    <state x="320" y="170" key="Vcs.Push.Dialog.v2/0.25.1440.817@0.25.1440.817" timestamp="1619970395868" />
+    <state x="378" y="52" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1619972927818">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state x="378" y="52" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.25.1440.817@0.25.1440.817" timestamp="1619972927818" />
     <state x="412" y="188" width="615" height="490" key="find.popup" timestamp="1619967905272">
       <screen x="0" y="25" width="1440" height="817" />
     </state>
     <state x="412" y="188" width="615" height="490" key="find.popup/0.25.1440.817@0.25.1440.817" timestamp="1619967905272" />
-    <state width="300" height="59" key="javadoc.popup.new" timestamp="1619969125592">
+    <state width="300" height="59" key="javadoc.popup.new" timestamp="1619977027280">
       <screen x="0" y="25" width="1440" height="817" />
     </state>
-    <state width="300" height="59" key="javadoc.popup.new/0.25.1440.817@0.25.1440.817" timestamp="1619969125592" />
+    <state width="300" height="59" key="javadoc.popup.new/0.25.1440.817@0.25.1440.817" timestamp="1619977027280" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/utils/HtmlContentUtil.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
