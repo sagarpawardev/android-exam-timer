@@ -31,17 +31,17 @@
                 android:layout_centerHorizontal="true"
                 android:padding="10dp"
                 android:layout_alignParentBottom="true"
-                android:text="00 : 00: 00"
-                android:drawableTint="@android:color/holo_green_light"
+                android:text="@string/_00_00_00"
                 android:id="@+id/tv_time"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+                app:drawableTint="@android:color/holo_green_light" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:textSize="40sp"
-                android:text="4"
+                android:text="@string/_4"
                 android:layout_above="@id/tv_time"
                 android:id="@+id/tv_q_number" />
 
@@ -74,17 +74,17 @@
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentBottom="true"
                 android:padding="10dp"
-                android:text="00 : 00: 01"
-                android:drawableTint="@android:color/holo_green_light"
+                android:text="@string/_00_00_01"
                 android:id="@+id/tv_time2"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+                app:drawableTint="@android:color/holo_green_light" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:textSize="40sp"
-                android:text="4"
+                android:text="@string/_4"
                 android:layout_above="@id/tv_time2"
                 android:id="@+id/tv_q_number2" />
 

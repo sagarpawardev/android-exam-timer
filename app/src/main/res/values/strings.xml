@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Exam Question Timer</string>
     <string name="title_activity_home">HomeActivity</string>
+    <string name="start">start</string>
+    <string name="number_of_questions">Number of Questions ?</string>
+    <string name="stop_exam_button">Stop Exam Button</string>
+    <string name="_00_00_00">00 : 00: 00</string>
+    <string name="_4">4</string>
+    <string name="_00_00_01">00 : 00: 01</string>
 </resources>

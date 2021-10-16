@@ -39,24 +39,10 @@
             android:paddingBottom="10dp"
             android:orientation="vertical">
 
-            <!--<EditText
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:padding="5dp"
-                android:backgroundTint="@android:color/holo_green_dark"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginBottom="4dp"
-                android:layout_marginTop="4dp"
-                android:inputType="textAutoComplete"
-                android:id="@+id/et_name"
-                android:hint="Exam Name"/>-->
-
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:padding="5dp"
-                android:layout_centerInParent="true"
                 android:backgroundTint="@android:color/holo_green_dark"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="4dp"
@@ -64,7 +50,7 @@
                 android:layout_marginTop="4dp"
                 android:inputType="number"
                 android:id="@+id/et_questions"
-                android:hint="Number of Questions ?"/>
+                android:hint="@string/number_of_questions"/>
 
             <Button
                 android:layout_width="wrap_content"
@@ -73,13 +59,11 @@
                 android:padding="8dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="10dp"
-                android:layout_below="@id/et_questions"
-                android:layout_alignParentEnd="true"
                 android:background="#2196F3"
                 android:textColor="@android:color/white"
                 android:layout_gravity="end"
                 android:id="@+id/btn_start"
-                android:text="start"/>
+                android:text="@string/start"/>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
