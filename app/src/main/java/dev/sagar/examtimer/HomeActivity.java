@@ -1,11 +1,11 @@
 package dev.sagar.examtimer;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -14,20 +14,11 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        final EditText etQuestions = findViewById(R.id.et_questions);
-        Button btnStart = findViewById(R.id.btn_start);
-
-        btnStart.setOnClickListener(view -> {
-            String txt = etQuestions.getText().toString();
-            int val = Integer.parseInt(txt);
-            etQuestions.setText("");
-            Bundle basket = new Bundle();
-            basket.putInt("q_count", val);
-            Intent intent = new Intent(HomeActivity.this, MainActivity.class);
-            intent.putExtras(basket);
-            startActivity(intent);
-        });
-
+        FragmentManager fragmentMgr = getSupportFragmentManager();
+        FragmentTransaction fragmentTxn = fragmentMgr.beginTransaction();
+        Fragment homeFragment = new HomeFragment();
+        fragmentTxn.replace(R.id.fragment_container, homeFragment);
+        fragmentTxn.commit();
     }
 
 }
