@@ -1,11 +1,13 @@
 package dev.sagar.examtimer;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -14,11 +16,27 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        FragmentManager fragmentMgr = getSupportFragmentManager();
-        FragmentTransaction fragmentTxn = fragmentMgr.beginTransaction();
-        Fragment homeFragment = new HomeFragment();
-        fragmentTxn.replace(R.id.fragment_container, homeFragment);
-        fragmentTxn.commit();
+        final HomeFragment homeFragment = new HomeFragment();
+        replaceFragment(homeFragment);
+
+        BottomNavigationView btmNav = findViewById(R.id.home_bottom_nav);
+        btmNav.setOnNavigationItemSelectedListener(item -> {
+            if(item.getItemId() == R.id.menu_home){
+                replaceFragment(homeFragment);
+            }
+            else if(item.getItemId() == R.id.menu_history){
+                replaceFragment(homeFragment); //TODO: Put history fragment here
+                Toast.makeText(HomeActivity.this, "Here Clicked", Toast.LENGTH_SHORT).show();
+            }
+            return true;
+        });
+    }
+
+    private void replaceFragment(@NonNull Fragment fragment){
+        getSupportFragmentManager().
+                beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit();
     }
 
 }
