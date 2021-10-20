@@ -1,13 +1,14 @@
 package dev.sagar.examtimer;
 
 import android.os.Bundle;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import dev.sagar.examtimer.history.HistoryFragment;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -16,7 +17,8 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        final HomeFragment homeFragment = new HomeFragment();
+        final HomeFragment homeFragment = HomeFragment.newInstance();
+        final HistoryFragment historyFragment = HistoryFragment.newInstance();
         replaceFragment(homeFragment);
 
         BottomNavigationView btmNav = findViewById(R.id.home_bottom_nav);
@@ -25,8 +27,7 @@ public class HomeActivity extends AppCompatActivity {
                 replaceFragment(homeFragment);
             }
             else if(item.getItemId() == R.id.menu_history){
-                replaceFragment(homeFragment); //TODO: Put history fragment here
-                Toast.makeText(HomeActivity.this, "Here Clicked", Toast.LENGTH_SHORT).show();
+                replaceFragment(historyFragment);
             }
             return true;
         });
