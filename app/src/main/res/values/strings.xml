@@ -9,4 +9,10 @@
     <string name="_00_00_01">00 : 00: 01</string>
     <string name="home">Home</string>
     <string name="history">History</string>
+    <string name="history_title">History</string>
+    <string name="history_list_placeholder_description">Your practise exam logs will appear here</string>
+    <string name="placeholder_image">placeholder image</string>
+    <string name="sample_date">23 August, 2021</string>
+    <string name="sample_attempted">Attempted: 10</string>
+    <string name="sample_time_taken">Time: 10 hr 30 mins</string>
 </resources>
