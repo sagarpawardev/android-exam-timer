@@ -8,4 +8,7 @@
     <color name="orangeColor">#F57F17</color>
     <color name="blueColor">#1565C0</color>
     <color name="whiteColor">#FFFFFF</color>
+    <color name="lightGray">#F7F7FA</color>
+    <color name="darkGray">#D1CFD7</color>
+    <color name="history_detail_table_header_bg">#F7F7FA</color>
 </resources>

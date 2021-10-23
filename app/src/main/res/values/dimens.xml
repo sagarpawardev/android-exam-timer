@@ -1,3 +1,7 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="table_cell_padding">8dp</dimen>
+    <dimen name="history_detail_margin">20dp</dimen>
+    <dimen name="history_detail_padding">23dp</dimen>
+    <dimen name="history_detail_summary_txt_padding">4dp</dimen>
 </resources>

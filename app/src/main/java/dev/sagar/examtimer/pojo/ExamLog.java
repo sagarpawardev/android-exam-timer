@@ -2,6 +2,7 @@ package dev.sagar.examtimer.pojo;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
 
 public class ExamLog {
@@ -51,9 +52,9 @@ public class ExamLog {
         this.questionLogList = questionLogList;
     }
 
-    static class QuestionLog{
+    public static class QuestionLog{
         private int index;
-        private int timeTaken;
+        private Duration duration;
 
         public int getIndex() {
             return index;
@@ -63,12 +64,30 @@ public class ExamLog {
             this.index = index;
         }
 
-        public int getTimeTaken() {
-            return timeTaken;
+        public Duration getDuration() {
+            return duration;
         }
 
-        public void setTimeTaken(int timeTaken) {
-            this.timeTaken = timeTaken;
+        public void setDuration(Duration duration) {
+            this.duration = duration;
+        }
+    }
+
+    public static class Factory{
+        private Factory(){}
+        public static final int DUMMY = 0;
+
+        public static ExamLog getInstance(int type){
+            ExamLog examLog = null;
+            if(type == DUMMY ){
+                examLog = new ExamLog();
+                examLog.setQuestionLogList(Collections.emptyList());
+                examLog.setTimeTaken(Duration.ofSeconds(0));
+                examLog.setStartDateTime(LocalDateTime.now());
+                examLog.setEndDateTime(LocalDateTime.now());
+                examLog.setQuestionsAttempted(0);
+            }
+            return examLog;
         }
     }
 }

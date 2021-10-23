@@ -3,8 +3,8 @@ package dev.sagar.examtimer.history;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import dev.sagar.examtimer.pojo.ExamLog;
 
@@ -24,7 +24,11 @@ public class ExamLogService {
     }
 
     public List<ExamLog> getLogList(){
-        return Collections.emptyList(); //TODO implementation here
+        throw new UnsupportedOperationException("This functionality is not yet supported");
+    }
+
+    public ExamLog getExamLog(String id) {
+        throw new UnsupportedOperationException("This functionality is not yet supported");
     }
 
     private static class MockExamLogService extends ExamLogService{
@@ -41,6 +45,22 @@ public class ExamLogService {
             }
 
             return examLogs;
+        }
+
+        @Override
+        public ExamLog getExamLog(String id) {
+            ExamLog log = new ExamLog();
+            List<ExamLog.QuestionLog> questions = new ArrayList<>();
+            Random random = new Random();
+            for(int i=0; i<40; i++){
+                ExamLog.QuestionLog questionLog = new ExamLog.QuestionLog();
+                questionLog.setDuration(Duration.ofSeconds(Math.abs(random.nextInt(500))));
+                questionLog.setIndex(i);
+                questions.add(questionLog);
+            }
+            log.setQuestionLogList(questions);
+
+            return log;
         }
     }
 }
