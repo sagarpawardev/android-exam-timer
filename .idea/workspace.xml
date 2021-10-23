@@ -14,11 +14,34 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed680d4c-32ba-4f8b-b505-85362959e49f" name="Default Changelist" comment="chore: update sdk version">
+    <list default="true" id="ed680d4c-32ba-4f8b-b505-85362959e49f" name="Default Changelist" comment="refactor: rename files to match convention">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/HistoryDetailActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/utils/DurationUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-anydpi/ic_email.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_email.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_email.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_email.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_email.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/table_cell_border.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/table_header_border.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/history_detail_activity.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/history_detail_row_header.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/history_detail_row_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/history_detail_summary.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/Exam_Timer.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/Exam_Timer.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/ExamLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/ExamLogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/HistoryListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/HistoryListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/pojo/ExamLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/pojo/ExamLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +72,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="resourceFile" />
         <option value="layoutResourceFile" />
+        <option value="resourceFile" />
         <option value="Class" />
       </list>
     </option>
@@ -78,6 +101,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android-custom-view/Users/sagar.pawar/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_RecyclerView_DIMENSIONS" value="1080&#10;1920" />
     <property name="android-custom-view/Users/sagar.pawar/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED" value="RecyclerView" />
+    <property name="android-custom-view/Users/sagar.pawar/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.4.0/51035a8f6342c20d4d8f242d100e6f25e0c271ac/material-1.4.0-sources.jar!/com/google/android/material/bottomnavigation/BottomNavigationView.java_BottomNavigationView_DIMENSIONS" value="1080&#10;1920" />
+    <property name="android-custom-view/Users/sagar.pawar/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.4.0/51035a8f6342c20d4d8f242d100e6f25e0c271ac/material-1.4.0-sources.jar!/com/google/android/material/bottomnavigation/BottomNavigationView.java_SELECTED" value="BottomNavigationView" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="memory.settings.postsync.last.time.stamp" value="1634409410305" />
@@ -90,7 +115,12 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-mdpi" />
+    </key>
+    <key name="android.template.477310058">
+      <recent name="dev.sagar.examtimer.history" />
+      <recent name="dev.sagar.examtimer" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/.idea" />
@@ -327,7 +357,35 @@
       <option name="project" value="LOCAL" />
       <updated>1634940440038</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="chore: update dependency versions">
+      <created>1634940642256</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1634940642256</updated>
+    </task>
+    <task id="LOCAL-00013" summary="chore: #2 update idea files">
+      <created>1634940677659</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1634940677659</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: #2 clickable history item">
+      <created>1634986762823</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1634986762823</updated>
+    </task>
+    <task id="LOCAL-00015" summary="refactor: rename files to match convention">
+      <created>1634998967863</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1634998967863</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -354,7 +412,11 @@
     <MESSAGE value="feature: #2 history view logic" />
     <MESSAGE value="feature: #2 history list view logic" />
     <MESSAGE value="chore: update sdk version" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: update sdk version" />
+    <MESSAGE value="chore: update dependency versions" />
+    <MESSAGE value="chore: #2 update idea files" />
+    <MESSAGE value="feat: #2 clickable history item" />
+    <MESSAGE value="refactor: rename files to match convention" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: rename files to match convention" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
