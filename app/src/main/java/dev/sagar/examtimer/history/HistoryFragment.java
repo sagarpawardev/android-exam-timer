@@ -18,7 +18,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -62,12 +61,12 @@ public class HistoryFragment extends Fragment {
 
     private HistoryListAdapter getAdapter(){
         List<ExamLog> examLogs = ExamLogService.getInstance().getLogList();
-        return new HistoryListAdapter(examLogs);
+        return new HistoryListAdapter(getActivity(), examLogs);
     }
 
     private DividerItemDecoration getDividerDecoration(RecyclerView recyclerView){
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), VERTICAL);
-        Activity activity = Objects.requireNonNull(getActivity());
+        Activity activity = requireActivity();
         Drawable dividerDrawable = Objects.requireNonNull(ContextCompat.getDrawable(activity, R.drawable.history_divider));
         dividerItemDecoration.setDrawable(dividerDrawable);
         return dividerItemDecoration;

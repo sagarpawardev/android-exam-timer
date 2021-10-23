@@ -17,6 +17,7 @@ public class ExamLogService {
         if (instance == null) {
             synchronized(ExamLogService.class) {
                 instance = new MockExamLogService(); //TODO Actual Implementation
+                //instance = new ExamLogService();
             }
         }
         return instance;

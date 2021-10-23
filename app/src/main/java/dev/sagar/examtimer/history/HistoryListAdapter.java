@@ -2,11 +2,12 @@ package dev.sagar.examtimer.history;
 
 import static java.time.format.FormatStyle.LONG;
 
-import android.os.Build;
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,7 +27,10 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.
     private static final int VIEW_TYPE_HISTORY = 1;
 
     private final List<ExamLog> examLogList;
-    public HistoryListAdapter(List<ExamLog> examLogList) {
+    private final Activity activity;
+
+    public HistoryListAdapter(Activity activity, List<ExamLog> examLogList) {
+        this.activity = activity;
         this.examLogList = examLogList;
     }
 
@@ -46,6 +50,9 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.
         holder.tvTimeTaken.setText( getTimeTaken(examLog) );
         holder.tvDate.setText( getFormattedDate(examLog) );
         holder.tvAttempted.setText( getAttemptedQuestion(examLog) );
+        holder.container.setOnClickListener(v ->
+                Toast.makeText(activity, "Item Clicked "+ holder.getAdapterPosition(), Toast.LENGTH_SHORT).show()
+        );
     }
 
     @Override
@@ -75,7 +82,6 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.
         long hours = duration.toHours();
         long minutes = duration.toMinutes() % 60;
         long seconds = duration.getSeconds() % 60;
-        duration.getSeconds();
 
         StringBuilder builder = new StringBuilder();
         if(hours > 0){
@@ -106,24 +112,14 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.
         private final TextView tvDate;
         private final TextView tvAttempted;
         private final TextView tvTimeTaken;
+        private final View container;
 
         public ViewHolder(View view) {
             super(view);
             tvDate = view.findViewById(R.id.history_tv_date);
             tvAttempted = view.findViewById(R.id.history_tv_attempted);
             tvTimeTaken = view.findViewById(R.id.history_tv_time_taken);
-        }
-
-        public TextView getTvDate() {
-            return tvDate;
-        }
-
-        public TextView getTvAttempted() {
-            return tvAttempted;
-        }
-
-        public TextView getTvTimeTaken() {
-            return tvTimeTaken;
+            container = view;
         }
     }
 
