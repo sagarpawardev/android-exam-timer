@@ -50,6 +50,7 @@
                 android:layout_marginTop="4dp"
                 android:inputType="number"
                 android:id="@+id/et_questions"
+                android:importantForAutofill="no"
                 android:hint="@string/number_of_questions"/>
 
             <Button

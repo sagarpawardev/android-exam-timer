@@ -8,26 +8,26 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import dev.sagar.examtimer.history.HistoryFragment;
+import dev.sagar.examtimer.history.HistoryListFragment;
 
 
 public class HomeActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.home_activity);
 
         final HomeFragment homeFragment = HomeFragment.newInstance();
-        final HistoryFragment historyFragment = HistoryFragment.newInstance();
+        final HistoryListFragment historyListFragment = HistoryListFragment.newInstance();
         replaceFragment(homeFragment);
 
         BottomNavigationView btmNav = findViewById(R.id.home_bottom_nav);
-        btmNav.setOnNavigationItemSelectedListener(item -> {
+        btmNav.setOnItemSelectedListener(item -> {
             if(item.getItemId() == R.id.menu_home){
                 replaceFragment(homeFragment);
             }
             else if(item.getItemId() == R.id.menu_history){
-                replaceFragment(historyFragment);
+                replaceFragment(historyListFragment);
             }
             return true;
         });

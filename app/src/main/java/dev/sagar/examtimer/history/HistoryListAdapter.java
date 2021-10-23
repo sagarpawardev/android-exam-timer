@@ -134,7 +134,7 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.
             }
             else {
                 view = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.history_row_item, parent, false);
+                        .inflate(R.layout.history_list_row_item, parent, false);
             }
 
             return view;

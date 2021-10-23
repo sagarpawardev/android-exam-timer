@@ -3,7 +3,6 @@ package dev.sagar.examtimer;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -20,11 +19,10 @@ import dev.sagar.examtimer.utils.HtmlContentUtil;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Locale;
 import java.util.TimeZone;
 
-public class MainActivity extends AppCompatActivity {
+public class ExamActivity extends AppCompatActivity {
 
     private CountUpTimer prevTimer = null;
     private CountUpTimer[] timers;
@@ -32,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.exam_activity);
 
         // Default Counter
         int count = 10;
@@ -94,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view) {
             if (timer.isRunning) {
                 timer.pause();
-                Toast.makeText(MainActivity.this, "Paused...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ExamActivity.this, "Paused...", Toast.LENGTH_SHORT).show();
             } else {
                 if(prevTimer!=null && prevTimer.isRunning){
                     prevTimer.pause();

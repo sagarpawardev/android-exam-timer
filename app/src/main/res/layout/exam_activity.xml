@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:keepScreenOn="true"
-    tools:context=".MainActivity">
+    tools:context=".ExamActivity">
 
-    <include layout="@layout/content_main" />
+    <include layout="@layout/exam_container" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
