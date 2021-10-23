@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="28dp"
+    android:paddingEnd="10dp"
+    android:paddingBottom="10dp"
+    android:paddingTop="32dp">
+
+    <TextView
+        android:id="@+id/history_detail_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sample_date"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        android:padding="@dimen/history_detail_summary_txt_padding"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/history_detail_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sample_time_range"
+        android:textSize="12sp"
+        android:padding="@dimen/history_detail_summary_txt_padding"
+        app:layout_constraintLeft_toRightOf="@id/history_detail_date"
+        app:layout_constraintBottom_toBottomOf="@id/history_detail_date" />
+
+    <TextView
+        android:id="@+id/history_detail_total_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/history_detail_summary_txt_padding"
+        android:layout_marginTop="6dp"
+        android:text="@string/sample_total_questions"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/history_detail_date" />
+
+    <TextView
+        android:id="@+id/history_detail_attempted_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/history_detail_summary_txt_padding"
+        android:text="@string/sample_attempted"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/history_detail_total_question" />
+
+    <TextView
+        android:id="@+id/history_detail_idle_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/history_detail_summary_txt_padding"
+        android:text="@string/sample_idle_time"
+        android:textColor="#F44336"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/history_detail_attempted_question" />
+
+    <TextView
+        android:id="@+id/history_detail_active_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/history_detail_summary_txt_padding"
+        android:textColor="#388E3C"
+        android:text="@string/sample_active_time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/history_detail_idle_time" />
+</androidx.constraintlayout.widget.ConstraintLayout>

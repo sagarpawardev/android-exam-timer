@@ -3,6 +3,7 @@ package dev.sagar.examtimer.history;
 import static java.time.format.FormatStyle.LONG;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import java.util.List;
 
 import dev.sagar.examtimer.R;
 import dev.sagar.examtimer.pojo.ExamLog;
+import dev.sagar.examtimer.utils.DurationUtil;
 
 public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.ViewHolder> {
 
@@ -50,9 +52,10 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.
         holder.tvTimeTaken.setText( getTimeTaken(examLog) );
         holder.tvDate.setText( getFormattedDate(examLog) );
         holder.tvAttempted.setText( getAttemptedQuestion(examLog) );
-        holder.container.setOnClickListener(v ->
-                Toast.makeText(activity, "Item Clicked "+ holder.getAdapterPosition(), Toast.LENGTH_SHORT).show()
-        );
+        holder.container.setOnClickListener(v -> {
+            Intent intent = new Intent(activity, HistoryDetailActivity.class);
+            activity.startActivity(intent);
+        });
     }
 
     @Override
@@ -78,29 +81,7 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.
 
     private String getTimeTaken(ExamLog examLog){
         Duration duration = examLog.getTimeTaken();
-
-        long hours = duration.toHours();
-        long minutes = duration.toMinutes() % 60;
-        long seconds = duration.getSeconds() % 60;
-
-        StringBuilder builder = new StringBuilder();
-        if(hours > 0){
-            builder.append(hours).append(" hr ");
-        }
-
-        if(minutes > 0){
-            builder.append(minutes).append(" min ");
-        }
-
-        if(seconds > 0){
-            builder.append(seconds).append(" sec ");
-        }
-
-        if(hours==0 && minutes==0 && seconds==0){
-            builder.append("0 sec");
-        }
-
-        return builder.toString();
+        return DurationUtil.getFormattedString(duration);
     }
 
     private String getAttemptedQuestion(ExamLog examLog){
