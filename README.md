@@ -9,5 +9,5 @@ Features:
 
 ## A short demo for project
 
-https://user-images.githubusercontent.com/18640791/138610314-9458b763-e830-4f4e-83cc-6cee17fbdd4b.mp4
+https://user-images.githubusercontent.com/18640791/138610746-78e713fd-0e4a-4b0c-9095-6e46fcea3339.mp4
 
