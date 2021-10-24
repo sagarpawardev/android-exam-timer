@@ -6,11 +6,20 @@ import java.util.Collections;
 import java.util.List;
 
 public class ExamLog {
+    private String id;
     private LocalDateTime startDateTime;
     private LocalDateTime endDateTime;
     private Duration timeTaken;
     private int questionsAttempted;
     private List<QuestionLog> questionLogList;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public Duration getTimeTaken() {
         return timeTaken;

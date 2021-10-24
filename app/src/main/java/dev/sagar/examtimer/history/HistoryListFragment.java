@@ -60,7 +60,7 @@ public class HistoryListFragment extends Fragment {
     }
 
     private HistoryListAdapter getAdapter(){
-        List<ExamLog> examLogs = ExamLogService.getInstance().getLogList();
+        List<ExamLog> examLogs = ExamLogService.getInstance(getActivity()).getLogList();
         return new HistoryListAdapter(getActivity(), examLogs);
     }
 

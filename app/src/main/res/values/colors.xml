@@ -10,5 +10,7 @@
     <color name="whiteColor">#FFFFFF</color>
     <color name="lightGray">#F7F7FA</color>
     <color name="darkGray">#D1CFD7</color>
+    <color name="greenTextColor">#388E3C</color>
+    <color name="redTextColor">#F44336</color>
     <color name="history_detail_table_header_bg">#F7F7FA</color>
 </resources>

@@ -4,11 +4,11 @@ import static java.time.format.FormatStyle.LONG;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -54,6 +54,9 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.
         holder.tvAttempted.setText( getAttemptedQuestion(examLog) );
         holder.container.setOnClickListener(v -> {
             Intent intent = new Intent(activity, HistoryDetailActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString(HistoryDetailActivity.KEY_EXAM_ID, examLog.getId());
+            intent.putExtras(bundle);
             activity.startActivity(intent);
         });
     }

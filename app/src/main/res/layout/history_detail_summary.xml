@@ -4,18 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingStart="28dp"
+    android:paddingTop="32dp"
     android:paddingEnd="10dp"
-    android:paddingBottom="10dp"
-    android:paddingTop="32dp">
+    android:paddingBottom="10dp">
 
     <TextView
         android:id="@+id/history_detail_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sample_date"
-        android:textSize="24sp"
-        android:textColor="#000000"
         android:padding="@dimen/history_detail_summary_txt_padding"
+        android:text="@string/sample_date"
+        android:textColor="#000000"
+        android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,48 +23,106 @@
         android:id="@+id/history_detail_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="@dimen/history_detail_summary_txt_padding"
         android:text="@string/sample_time_range"
         android:textSize="12sp"
-        android:padding="@dimen/history_detail_summary_txt_padding"
-        app:layout_constraintLeft_toRightOf="@id/history_detail_date"
-        app:layout_constraintBottom_toBottomOf="@id/history_detail_date" />
+        app:layout_constraintBottom_toBottomOf="@id/history_detail_date"
+        app:layout_constraintLeft_toRightOf="@id/history_detail_date" />
 
-    <TextView
-        android:id="@+id/history_detail_total_question"
+    <LinearLayout
+        android:id="@+id/history_detail_ll_total"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/history_detail_summary_txt_padding"
+        android:orientation="horizontal"
         android:layout_marginTop="6dp"
-        android:text="@string/sample_total_questions"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/history_detail_date" />
+        app:layout_constraintTop_toBottomOf="@id/history_detail_date">
 
-    <TextView
-        android:id="@+id/history_detail_attempted_question"
+        <TextView
+            android:id="@+id/history_detail_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/history_detail_summary_txt_padding"
+            android:text="@string/total" />
+
+        <TextView
+            android:id="@+id/history_detail_total_questions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/history_detail_summary_txt_padding"
+            android:text="@string/_4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/history_detail_ll_attempted"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/history_detail_summary_txt_padding"
-        android:text="@string/sample_attempted"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/history_detail_total_question" />
+        app:layout_constraintTop_toBottomOf="@id/history_detail_ll_total">
 
-    <TextView
-        android:id="@+id/history_detail_idle_time"
+        <TextView
+            android:id="@+id/history_detail_attempted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/history_detail_summary_txt_padding"
+            android:text="@string/attempted" />
+
+        <TextView
+            android:id="@+id/history_detail_attempted_questions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/history_detail_summary_txt_padding"
+            android:text="@string/_4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/history_detail_ll_idle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/history_detail_summary_txt_padding"
-        android:text="@string/sample_idle_time"
-        android:textColor="#F44336"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/history_detail_attempted_question" />
+        app:layout_constraintTop_toBottomOf="@+id/history_detail_ll_attempted">
 
-    <TextView
-        android:id="@+id/history_detail_active_time"
+        <TextView
+            android:id="@+id/history_detail_idle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/history_detail_summary_txt_padding"
+            android:text="@string/idle_time"
+            android:textColor="#F44336" />
+
+        <TextView
+            android:id="@+id/history_detail_idle_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/history_detail_summary_txt_padding"
+            android:text="@string/sample_time_full"
+            android:textColor="@color/redTextColor" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/history_detail_ll_active"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/history_detail_summary_txt_padding"
-        android:textColor="#388E3C"
-        android:text="@string/sample_active_time"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/history_detail_idle_time" />
+        app:layout_constraintTop_toBottomOf="@+id/history_detail_ll_idle">
+
+        <TextView
+            android:id="@+id/history_detail_active"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/history_detail_summary_txt_padding"
+            android:text="@string/active_time"
+            android:textColor="#388E3C" />
+
+        <TextView
+            android:id="@+id/history_detail_active_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/history_detail_summary_txt_padding"
+            android:text="@string/sample_time_full"
+            android:textColor="@color/greenTextColor" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

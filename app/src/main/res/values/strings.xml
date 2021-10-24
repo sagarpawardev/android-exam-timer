@@ -18,10 +18,15 @@
     <string name="question_number">Question No</string>
     <string name="time">Time</string>
     <string name="sample_time">3 min 20 sec</string>
+    <string name="sample_time_full">4 hr 3 min 20 sec</string>
     <string name="sample_q_no">1</string>
     <string name="send_email">Send Email</string>
     <string name="sample_time_range">5:00 AM - 8:30 AM</string>
     <string name="sample_total_questions">Total Questions: 34</string>
     <string name="sample_idle_time">Idle Time: 10 min 2 sec</string>
     <string name="sample_active_time">Active Time: 2 hr 20 min 54 sec</string>
+    <string name="attempted">Attempted:</string>
+    <string name="active_time">Active Time:</string>
+    <string name="idle_time">Idle Time:</string>
+    <string name="total">Total:</string>
 </resources>
