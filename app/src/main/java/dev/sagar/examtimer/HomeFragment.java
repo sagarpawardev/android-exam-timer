@@ -1,5 +1,7 @@
 package dev.sagar.examtimer;
 
+import static dev.sagar.examtimer.Constants.PROP_HOME_MAX_QUESTION;
+
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -14,8 +16,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.apache.commons.lang3.StringUtils;
+
+import dev.sagar.examtimer.utils.ConfigReader;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -57,14 +62,28 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
+                int maxSupportedQuestion = ConfigReader.getInstance(getActivity()).getInt(PROP_HOME_MAX_QUESTION, 400);
+                if(s.length() > 3) {
+                    Toast.makeText(getActivity(), "Max Supported Questions: " + maxSupportedQuestion, Toast.LENGTH_SHORT).show();
+                    btnStart.setEnabled( false );
+                    return;
+                }
+
                 btnStart.setEnabled( StringUtils.isNumeric(s) );
             }
         });
 
         btnStart.setOnClickListener(btnView -> {
+            int maxSupportedQuestion = ConfigReader.getInstance(getActivity()).getInt(PROP_HOME_MAX_QUESTION, 400);
             String txt = etQuestions.getText().toString();
             int val = Integer.parseInt(txt);
             etQuestions.setText("");
+
+            if(maxSupportedQuestion < val){
+                Toast.makeText(getActivity(), "Max Supported Questions: "+maxSupportedQuestion, Toast.LENGTH_SHORT).show();
+                return;
+            }
+
             Bundle basket = new Bundle();
             basket.putInt("q_count", val);
             Intent intent = new Intent(getActivity(), ExamActivity.class);

@@ -8,13 +8,10 @@ import androidx.annotation.NonNull;
 
 import org.apache.commons.lang3.StringUtils;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 import java.util.Random;
 
 import dev.sagar.examtimer.ExamTimerApplication;
@@ -25,6 +22,7 @@ import dev.sagar.examtimer.db.entity.QuestionLogEntityDao;
 import dev.sagar.examtimer.history.adapter.ExamLogEntityAdapter;
 import dev.sagar.examtimer.history.adapter.QuestionLogEntityAdapter;
 import dev.sagar.examtimer.pojo.ExamLog;
+import dev.sagar.examtimer.utils.ConfigReader;
 
 public class ExamLogService {
     private final Activity activity;
@@ -34,15 +32,8 @@ public class ExamLogService {
 
     public static ExamLogService getInstance(Activity activity) {
         ExamLogService instance;
-        Properties properties = new Properties();
-        try {
-            InputStream inputStream = activity.getBaseContext().getAssets().open("config.properties");
-            properties.load(inputStream);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
-        boolean mockService = Boolean.parseBoolean(properties.getProperty(PROP_MOCK_SERVICES, "false"));
+        boolean mockService = ConfigReader.getInstance(activity).getBoolean(PROP_MOCK_SERVICES, false);
         if (mockService) {
             instance = new MockExamLogService(activity);
         } else {
