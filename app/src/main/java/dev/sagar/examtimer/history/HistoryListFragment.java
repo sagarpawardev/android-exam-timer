@@ -60,8 +60,8 @@ public class HistoryListFragment extends Fragment {
     }
 
     private HistoryListAdapter getAdapter(){
-        List<ExamLog> examLogs = ExamLogService.getInstance(getActivity()).getLogList();
-        return new HistoryListAdapter(getActivity(), examLogs);
+        List<ExamLog> examLogs = ExamLogService.getInstance(requireActivity()).getLogList();
+        return new HistoryListAdapter(requireActivity(), examLogs);
     }
 
     private DividerItemDecoration getDividerDecoration(RecyclerView recyclerView){

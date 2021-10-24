@@ -14,33 +14,24 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed680d4c-32ba-4f8b-b505-85362959e49f" name="Default Changelist" comment="refactor: rename files to match convention">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/HistoryDetailActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/utils/DurationUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-anydpi/ic_email.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_email.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_email.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_email.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_email.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/table_cell_border.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/table_header_border.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/history_detail_activity.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/history_detail_row_header.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/history_detail_row_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/history_detail_summary.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ed680d4c-32ba-4f8b-b505-85362959e49f" name="Default Changelist" comment="feature: #2 feature integration">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/ExamTimerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/db/entity/ExamLogEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/db/entity/QuestionLogEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/adapter/BaseServiceAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/adapter/ExamLogEntityAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/adapter/QuestionLogEntityAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/Exam_Timer.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/Exam_Timer.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/ExamActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/ExamActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/ExamLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/ExamLogService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/HistoryListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/HistoryListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/HistoryListFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/HistoryListFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/pojo/ExamLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/pojo/ExamLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/utils/DurationUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/utils/DurationUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +97,7 @@
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="memory.settings.postsync.last.time.stamp" value="1634409410305" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recommended.upgrade.last.time.stamp" value="1634409689111" />
@@ -126,8 +117,14 @@
       <recent name="$PROJECT_DIR$/.idea" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="dev.sagar.examtimer" />
+      <recent name="dev.sagar.examtimer.db" />
+      <recent name="dev.sagar.examtimer.entities" />
       <recent name="dev.sagar.examtimer.history" />
       <recent name="dev.sagar.examtimer.history.fragment" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="dev.sagar.examtimer.history.adapter" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -385,7 +382,42 @@
       <option name="project" value="LOCAL" />
       <updated>1634998967863</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feature: #2 history detail activity">
+      <created>1635019001743</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1635019001743</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feature: #2 history detail activity">
+      <created>1635019022453</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1635019022453</updated>
+    </task>
+    <task id="LOCAL-00018" summary="chore: intellij files">
+      <created>1635019087459</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1635019087459</updated>
+    </task>
+    <task id="LOCAL-00019" summary="feature: #2 history list pass data to histoyr detail">
+      <created>1635058193921</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1635058193921</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feature: #2 redirect exam to history detail">
+      <created>1635059584468</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1635059584468</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -416,7 +448,12 @@
     <MESSAGE value="chore: #2 update idea files" />
     <MESSAGE value="feat: #2 clickable history item" />
     <MESSAGE value="refactor: rename files to match convention" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: rename files to match convention" />
+    <MESSAGE value="feature: #2 history detail activity" />
+    <MESSAGE value="chore: intellij files" />
+    <MESSAGE value="feature: #2 history list pass data to histoyr detail" />
+    <MESSAGE value="feature: #2 redirect exam to history detail" />
+    <MESSAGE value="feature: #2 feature integration" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: #2 feature integration" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -425,6 +462,11 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/utils/HtmlContentUtil.java</url>
           <line>24</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/ExamLogService.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

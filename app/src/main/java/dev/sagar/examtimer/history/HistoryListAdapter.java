@@ -83,7 +83,7 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.
     }
 
     private String getTimeTaken(ExamLog examLog){
-        Duration duration = examLog.getTimeTaken();
+        Duration duration = examLog.getActiveTime();
         return DurationUtil.getFormattedString(duration);
     }
 

@@ -114,10 +114,10 @@ public class ExamActivity extends AppCompatActivity {
         // Create Exam Log
         ExamLog examLog = new ExamLog();
         List<ExamLog.QuestionLog> questionLogs = new ArrayList<>(timers.length);
-        ExamLog.QuestionLog questionLog = new ExamLog.QuestionLog();
         for (int i = 0; i < timers.length; i++) {
+            ExamLog.QuestionLog questionLog = new ExamLog.QuestionLog();
             CountUpTimer timer = timers[i];
-            Duration duration = Duration.ofSeconds(timer.getSpentTime());
+            Duration duration = Duration.ofMillis(timer.getSpentTime());
             questionLog.setDuration(duration);
             questionLog.setIndex(i + 1);
             questionLogs.add(questionLog);
@@ -130,10 +130,10 @@ public class ExamActivity extends AppCompatActivity {
         examLog.setQuestionsAttempted(attemptedQuestion);
         examLog.setEndDateTime(endTime);
         examLog.setStartDateTime(startTime);
-        examLog.setTimeTaken(Duration.between(startTime, endTime));
+        examLog.setActiveTime(Duration.between(startTime, endTime));
 
         // Save Exam Log
-        ExamLogService.getInstance(this).createExamLog(examLog);
+        examLog = ExamLogService.getInstance(this).createExamLog(examLog);
 
         // Start Activity
         Intent intent = new Intent(this, HistoryDetailActivity.class);

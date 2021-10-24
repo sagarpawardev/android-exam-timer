@@ -9,7 +9,7 @@ public class ExamLog {
     private String id;
     private LocalDateTime startDateTime;
     private LocalDateTime endDateTime;
-    private Duration timeTaken;
+    private Duration activeTime;
     private int questionsAttempted;
     private List<QuestionLog> questionLogList;
 
@@ -21,12 +21,12 @@ public class ExamLog {
         this.id = id;
     }
 
-    public Duration getTimeTaken() {
-        return timeTaken;
+    public Duration getActiveTime() {
+        return activeTime;
     }
 
-    public void setTimeTaken(Duration timeTaken) {
-        this.timeTaken = timeTaken;
+    public void setActiveTime(Duration activeTime) {
+        this.activeTime = activeTime;
     }
 
     public int getQuestionsAttempted() {
@@ -91,7 +91,7 @@ public class ExamLog {
             if(type == DUMMY ){
                 examLog = new ExamLog();
                 examLog.setQuestionLogList(Collections.emptyList());
-                examLog.setTimeTaken(Duration.ofSeconds(0));
+                examLog.setActiveTime(Duration.ofSeconds(0));
                 examLog.setStartDateTime(LocalDateTime.now());
                 examLog.setEndDateTime(LocalDateTime.now());
                 examLog.setQuestionsAttempted(0);
