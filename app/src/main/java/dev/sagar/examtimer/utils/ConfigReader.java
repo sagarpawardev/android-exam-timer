@@ -12,7 +12,7 @@ import java.util.Properties;
 
 public class ConfigReader {
 
-    private Properties properties;
+    private final Properties properties;
     private static ConfigReader instance = null;
 
     private ConfigReader(Properties properties) {
