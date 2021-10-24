@@ -63,6 +63,7 @@
                 android:background="@color/colorPrimary"
                 android:textColor="@android:color/white"
                 android:layout_gravity="end"
+                android:enabled="false"
                 android:id="@+id/btn_start"
                 android:text="@string/start"/>
         </LinearLayout>

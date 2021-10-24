@@ -15,24 +15,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed680d4c-32ba-4f8b-b505-85362959e49f" name="Default Changelist" comment="feature: #2 feature integration">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/ExamTimerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/db/entity/ExamLogEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/db/entity/QuestionLogEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/adapter/BaseServiceAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/adapter/ExamLogEntityAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/adapter/QuestionLogEntityAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/Exam_Timer.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/Exam_Timer.app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/ExamActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/ExamActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/ExamLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/ExamLogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/HistoryListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/HistoryListAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/HistoryListFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/HistoryListFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/pojo/ExamLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/pojo/ExamLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/utils/DurationUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/utils/DurationUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/HomeFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/home_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/home_fragment.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -417,7 +403,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635059584468</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="feature: #2 feature integration">
+      <created>1635073604813</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1635073604813</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
