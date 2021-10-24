@@ -51,6 +51,10 @@ public class ExamLogService {
         throw new UnsupportedOperationException("This functionality is not yet supported");
     }
 
+    public ExamLog createExamLog(ExamLog examLog){
+        throw new UnsupportedOperationException("This functionality is not yet supported");
+    }
+
     private static class MockExamLogService extends ExamLogService{
         @Override
         public List<ExamLog> getLogList() {
@@ -88,6 +92,12 @@ public class ExamLogService {
             log.setQuestionLogList(questions);
 
             return log;
+        }
+
+        @Override
+        public ExamLog createExamLog(ExamLog examLog) {
+            examLog.setId("123");
+            return examLog;
         }
     }
 }

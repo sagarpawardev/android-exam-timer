@@ -1,7 +1,6 @@
 package dev.sagar.examtimer;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,23 +13,28 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import dev.sagar.examtimer.utils.CountUpTimer;
-import dev.sagar.examtimer.utils.HtmlContentUtil;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Locale;
-import java.util.TimeZone;
+import dev.sagar.examtimer.history.ExamLogService;
+import dev.sagar.examtimer.history.HistoryDetailActivity;
+import dev.sagar.examtimer.pojo.ExamLog;
+import dev.sagar.examtimer.utils.CountUpTimer;
 
 public class ExamActivity extends AppCompatActivity {
 
     private CountUpTimer prevTimer = null;
     private CountUpTimer[] timers;
+    private LocalDateTime startTime;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exam_activity);
+
+        startTime = LocalDateTime.now();
 
         // Default Counter
         int count = 10;
@@ -46,14 +50,14 @@ public class ExamActivity extends AppCompatActivity {
         // Setup Fab
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> {
-            if(prevTimer!= null && prevTimer.isRunning) {
+            if (prevTimer != null && prevTimer.isRunning) {
                 prevTimer.pause();
             }
             prepareFinish();
         });
 
         // Setup Grid Rows
-        for(int qNo=1; qNo<=count; qNo+=2){
+        for (int qNo = 1; qNo <= count; qNo += 2) {
             View gridRow = inflater.inflate(R.layout.inner_grid, parent, false);
 
             // Prepare Grid 1
@@ -62,18 +66,17 @@ public class ExamActivity extends AppCompatActivity {
             tvQNo1.setText(String.valueOf(qNo));
             CountUpTimer timer1 = new CountUpTimer(this, grid1);
             grid1.setOnClickListener(new TimerOnClickListener(timer1));
-            timers[qNo-1] = timer1;
+            timers[qNo - 1] = timer1;
 
             // Prepare Grid 2
             View grid2 = gridRow.findViewById(R.id.grid2);
-            if(qNo+1<=count) {
+            if (qNo + 1 <= count) {
                 TextView tvQNo2 = gridRow.findViewById(R.id.tv_q_number2);
                 tvQNo2.setText(String.valueOf(qNo + 1));
                 CountUpTimer timer2 = new CountUpTimer(this, grid2);
                 grid2.setOnClickListener(new TimerOnClickListener(timer2));
                 timers[qNo] = timer2;
-            }
-            else{
+            } else {
                 grid2.setVisibility(View.GONE);
             }
 
@@ -84,7 +87,8 @@ public class ExamActivity extends AppCompatActivity {
 
     class TimerOnClickListener implements View.OnClickListener {
         private final CountUpTimer timer;
-        private TimerOnClickListener(CountUpTimer timer){
+
+        private TimerOnClickListener(CountUpTimer timer) {
             this.timer = timer;
         }
 
@@ -94,7 +98,7 @@ public class ExamActivity extends AppCompatActivity {
                 timer.pause();
                 Toast.makeText(ExamActivity.this, "Paused...", Toast.LENGTH_SHORT).show();
             } else {
-                if(prevTimer!=null && prevTimer.isRunning){
+                if (prevTimer != null && prevTimer.isRunning) {
                     prevTimer.pause();
                 }
                 prevTimer = timer;
@@ -103,28 +107,42 @@ public class ExamActivity extends AppCompatActivity {
         }
     }
 
-    public void prepareFinish(){
-        StringBuilder builder = new StringBuilder();
-        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
-        format.setTimeZone(TimeZone.getTimeZone("UTC"));
+    public void prepareFinish() {
+        int attemptedQuestion = 0;
+        final LocalDateTime endTime = LocalDateTime.now();
 
-        for(int i=0; i<timers.length; i++){
+        // Create Exam Log
+        ExamLog examLog = new ExamLog();
+        List<ExamLog.QuestionLog> questionLogs = new ArrayList<>(timers.length);
+        ExamLog.QuestionLog questionLog = new ExamLog.QuestionLog();
+        for (int i = 0; i < timers.length; i++) {
             CountUpTimer timer = timers[i];
-            String strTime = format.format(timer.getSpentTime());
-            String text = "Question "+(i+1)+": \t"+strTime+"\n";
-            builder.append(text);
-        }
+            Duration duration = Duration.ofSeconds(timer.getSpentTime());
+            questionLog.setDuration(duration);
+            questionLog.setIndex(i + 1);
+            questionLogs.add(questionLog);
 
-        //String text = builder.toString();
-        String text = new HtmlContentUtil().createTimerTable(Arrays.asList(timers));
-        String subject = "Results";
-        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                "mailto","", null));
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
-        emailIntent.putExtra(Intent.EXTRA_TEXT, text);
+            if (!duration.isZero()) {
+                attemptedQuestion++;
+            }
+        }
+        examLog.setQuestionLogList(questionLogs);
+        examLog.setQuestionsAttempted(attemptedQuestion);
+        examLog.setEndDateTime(endTime);
+        examLog.setStartDateTime(startTime);
+        examLog.setTimeTaken(Duration.between(startTime, endTime));
+
+        // Save Exam Log
+        ExamLogService.getInstance(this).createExamLog(examLog);
+
+        // Start Activity
+        Intent intent = new Intent(this, HistoryDetailActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString(HistoryDetailActivity.KEY_EXAM_ID, examLog.getId());
+        intent.putExtras(bundle);
 
         finish();
-        startActivity(Intent.createChooser(emailIntent, "Send Email Using: "));
+        startActivity(intent);
     }
 
     @Override
