@@ -3,6 +3,7 @@ package dev.sagar.examtimer.history;
 import static androidx.recyclerview.widget.DividerItemDecoration.VERTICAL;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
@@ -93,20 +94,29 @@ public class HistoryListFragment extends Fragment {
             }
         });
 
-        fabDelete.setOnClickListener(v -> {
-            List<Integer> selectedPositions =  adapter.getSelectedPositions();
-            List<ExamLog> selectedExamLogs = new ArrayList<>(selectedPositions.size());
-            selectedPositions.forEach( pos -> {
-                ExamLog examLog = examLogs.get(pos);
-                selectedExamLogs.add(examLog);
-            });
-
-            examLogService.deleteAll(selectedExamLogs);
-
-            selectedExamLogs.forEach(examLogs::remove);
-            adapter.notifySelectionsRemoved();
-        });
+        fabDelete.setOnClickListener(v ->
+                new AlertDialog.Builder(requireActivity())
+                    .setMessage(R.string.history_delete_items)
+                    .setPositiveButton(R.string.delete, (dialog, id) ->
+                            deleteExamLogs(adapter, examLogs, examLogService))
+                    .setNegativeButton(R.string.no, (dialog, id) -> dialog.cancel())
+                    .create()
+                    .show());
         return adapter;
+    }
+
+    private void deleteExamLogs(HistoryListAdapter adapter, List<ExamLog> examLogs, ExamLogService examLogService){
+        List<Integer> selectedPositions =  adapter.getSelectedPositions();
+        List<ExamLog> selectedExamLogs = new ArrayList<>(selectedPositions.size());
+        selectedPositions.forEach( pos -> {
+            ExamLog examLog = examLogs.get(pos);
+            selectedExamLogs.add(examLog);
+        });
+
+        examLogService.deleteAll(selectedExamLogs);
+
+        selectedExamLogs.forEach(examLogs::remove);
+        adapter.notifySelectionsRemoved();
     }
 
     private DividerItemDecoration getDividerDecoration(RecyclerView recyclerView){

@@ -33,4 +33,6 @@
     <string name="exam_stop">Stop Exam?</string>
     <string name="stop">Stop</string>
     <string name="no">No</string>
+    <string name="history_delete_items">Delete selected exams?</string>
+    <string name="delete">Delete</string>
 </resources>

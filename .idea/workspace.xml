@@ -16,7 +16,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ed680d4c-32ba-4f8b-b505-85362959e49f" name="Default Changelist" comment="fix: #6 OutOfMemoryException in home activity">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/ExamActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/ExamActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/HistoryListFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/HistoryListFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -428,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635617751599</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="feat: #8 dialog for stop exam">
+      <created>1635620018495</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1635620018495</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -468,7 +475,8 @@
     <MESSAGE value="fix: #6 OutOfMemoryException in home activity" />
     <MESSAGE value="feature: #4 delete option in history list" />
     <MESSAGE value="chore: update workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: update workspace.xml" />
+    <MESSAGE value="feat: #8 dialog for stop exam" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: #8 dialog for stop exam" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
