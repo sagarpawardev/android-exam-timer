@@ -1,5 +1,6 @@
 package dev.sagar.examtimer;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -53,7 +54,7 @@ public class ExamActivity extends AppCompatActivity {
             if (prevTimer != null && prevTimer.isRunning) {
                 prevTimer.pause();
             }
-            prepareFinish();
+            showConfirmationDialog();
         });
 
         // Setup Grid Rows
@@ -148,5 +149,14 @@ public class ExamActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
+    }
+
+    public void showConfirmationDialog(){
+        new AlertDialog.Builder(this)
+                .setMessage(R.string.exam_stop)
+                .setPositiveButton(R.string.stop, (dialog, id) -> prepareFinish())
+                .setNegativeButton(R.string.no, (dialog, id) -> dialog.cancel())
+                .create()
+                .show();
     }
 }

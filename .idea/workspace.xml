@@ -16,6 +16,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ed680d4c-32ba-4f8b-b505-85362959e49f" name="Default Changelist" comment="fix: #6 OutOfMemoryException in home activity">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/ExamActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/ExamActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +49,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile" />
-        <option value="Class" />
         <option value="resourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -419,7 +421,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635082792100</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="chore: update workspace.xml">
+      <created>1635617751599</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1635617751599</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -458,7 +467,8 @@
     <MESSAGE value="fix: #5 NumberFormatException in home activity" />
     <MESSAGE value="fix: #6 OutOfMemoryException in home activity" />
     <MESSAGE value="feature: #4 delete option in history list" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: #4 delete option in history list" />
+    <MESSAGE value="chore: update workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: update workspace.xml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -472,11 +482,6 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/ExamLogService.java</url>
           <line>66</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/dev/sagar/examtimer/history/HistoryListAdapter.java</url>
-          <line>131</line>
-          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
