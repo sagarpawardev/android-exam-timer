@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#2196F3</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#F44336</color>
 
     <color name="greenColor">#4CAF50</color>
     <color name="orangeColor">#F57F17</color>
@@ -13,4 +13,5 @@
     <color name="greenTextColor">#388E3C</color>
     <color name="redTextColor">#F44336</color>
     <color name="history_detail_table_header_bg">#F7F7FA</color>
+    <color name="red500">#F44336</color>
 </resources>

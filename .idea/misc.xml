@@ -6,24 +6,31 @@
         <entry key="../../../../layout/custom_preview.xml" value="0.259375" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.25" />
         <entry key="app/src/main/res/drawable/baseline_stop_24.xml" value="0.4338461538461538" />
+        <entry key="app/src/main/res/drawable/border_outline_red.xml" value="0.2604166666666667" />
         <entry key="app/src/main/res/drawable/history_divider.xml" value="0.2604166666666667" />
+        <entry key="app/src/main/res/drawable/history_list_item_selector.xml" value="0.2604166666666667" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.25" />
         <entry key="app/src/main/res/drawable/table_cell_border.xml" value="0.2604166666666667" />
         <entry key="app/src/main/res/drawable/table_header_border.xml" value="0.2604166666666667" />
+        <entry key="app/src/main/res/layout/activity_dummy.xml" value="0.23867753623188406" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1111111111111111" />
         <entry key="app/src/main/res/layout/comp_title.xml" value="0.24427083333333333" />
+        <entry key="app/src/main/res/layout/content_dummy.xml" value="0.23867753623188406" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.2572463768115942" />
         <entry key="app/src/main/res/layout/exam_activity.xml" value="0.24427083333333333" />
         <entry key="app/src/main/res/layout/exam_container.xml" value="0.24427083333333333" />
+        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.23867753623188406" />
         <entry key="app/src/main/res/layout/fragment_history.xml" value="0.24427083333333333" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.23020833333333332" />
+        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.23867753623188406" />
         <entry key="app/src/main/res/layout/history_detail_activity.xml" value="0.1933876811594203" />
         <entry key="app/src/main/res/layout/history_detail_row_header.xml" value="0.1001792400465222" />
         <entry key="app/src/main/res/layout/history_detail_row_item.xml" value="0.24427083333333333" />
         <entry key="app/src/main/res/layout/history_detail_summary.xml" value="0.24427083333333333" />
         <entry key="app/src/main/res/layout/history_list_fragment.xml" value="0.24427083333333333" />
         <entry key="app/src/main/res/layout/history_list_placeholder.xml" value="0.1933876811594203" />
+        <entry key="app/src/main/res/layout/history_list_row_item.xml" value="0.23867753623188406" />
         <entry key="app/src/main/res/layout/history_row_item.xml" value="0.24427083333333333" />
         <entry key="app/src/main/res/layout/home_activity.xml" value="0.24427083333333333" />
         <entry key="app/src/main/res/layout/home_fragment.xml" value="0.23233695652173914" />

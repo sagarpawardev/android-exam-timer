@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 import dev.sagar.examtimer.ExamTimerApplication;
 import dev.sagar.examtimer.db.entity.ExamLogEntity;
@@ -77,6 +78,15 @@ public class ExamLogService {
         return examLog;
     }
 
+    public void deleteAll(List<ExamLog> examLogs){
+        ExamTimerApplication application = (ExamTimerApplication) this.activity.getApplication();
+        ExamLogEntityDao examDao = application.getDaoSession().getExamLogEntityDao();
+        List<ExamLogEntity> entities = examLogs.stream()
+                .map( examLog -> ExamLogEntityAdapter.getInstance().getEntity(examLog))
+                .collect(Collectors.toList());
+        examDao.deleteInTx(entities);
+    }
+
     private static class MockExamLogService extends ExamLogService{
         private MockExamLogService(Activity activity) {
             super(activity);
@@ -124,6 +134,11 @@ public class ExamLogService {
         public ExamLog createExamLog(ExamLog examLog) {
             examLog.setId("123");
             return examLog;
+        }
+
+        @Override
+        public void deleteAll(List<ExamLog> examLogs) {
+
         }
     }
 }
