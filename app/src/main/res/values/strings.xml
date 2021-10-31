@@ -35,4 +35,5 @@
     <string name="no">No</string>
     <string name="history_delete_items">Delete selected exams?</string>
     <string name="delete">Delete</string>
+    <string name="selection_tick">Selection Tick</string>
 </resources>
