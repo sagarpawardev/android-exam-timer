@@ -170,12 +170,12 @@ public class HistoryDetailActivity extends AppCompatActivity {
             } else {
                 Log.w(HistoryDetailActivity.this.getLocalClassName(), "Unable to start review activity");
             }
-        });
 
-        // Update review matrices
-        SharedPrefUtil prefUtil = SharedPrefUtil.newInstance(this);
-        prefUtil.putDate(R.string.pref_review_last_ask_date, LocalDate.now());
-        int askCount = prefUtil.getInt(R.string.pref_review_ask_count);
-        prefUtil.putInt(R.string.pref_review_ask_count, askCount+1);
+            // Update review matrices
+            SharedPrefUtil prefUtil = SharedPrefUtil.newInstance(this);
+            prefUtil.putDate(R.string.pref_review_last_ask_date, LocalDate.now());
+            int askCount = prefUtil.getInt(R.string.pref_review_ask_count);
+            prefUtil.putInt(R.string.pref_review_ask_count, askCount+1);
+        });
     }
 }
