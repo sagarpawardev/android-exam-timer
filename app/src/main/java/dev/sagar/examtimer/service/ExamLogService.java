@@ -51,6 +51,12 @@ public class ExamLogService {
         return ExamLogEntityAdapter.getInstance().getAll(examLogEntities);
     }
 
+    public long getCount(){
+        ExamTimerApplication application = (ExamTimerApplication) this.activity.getApplication();
+        ExamLogEntityDao examDao = application.getDaoSession().getExamLogEntityDao();
+        return examDao.count();
+    }
+
     public ExamLog getExamLog(@NonNull String id) {
         if(StringUtils.isBlank(id)){
             throw new IllegalArgumentException("id is required for this operation: "+id);

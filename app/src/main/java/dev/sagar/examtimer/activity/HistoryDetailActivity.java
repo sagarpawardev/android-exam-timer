@@ -16,9 +16,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.play.core.review.ReviewInfo;
+import com.google.android.play.core.review.ReviewManager;
+import com.google.android.play.core.review.ReviewManagerFactory;
+import com.google.android.play.core.tasks.Task;
 
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.Locale;
@@ -28,7 +33,10 @@ import dev.sagar.examtimer.Constants;
 import dev.sagar.examtimer.R;
 import dev.sagar.examtimer.service.ExamLogService;
 import dev.sagar.examtimer.pojo.ExamLog;
+import dev.sagar.examtimer.strategy.ReviewContext;
+import dev.sagar.examtimer.strategy.review.HistoryReviewStrategy;
 import dev.sagar.examtimer.utils.DurationUtil;
+import dev.sagar.examtimer.utils.SharedPrefUtil;
 
 public class HistoryDetailActivity extends AppCompatActivity {
 
@@ -88,6 +96,8 @@ public class HistoryDetailActivity extends AppCompatActivity {
         // Fab
         FloatingActionButton fabEmail = findViewById(R.id.fab_send_email);
         fabEmail.setOnClickListener(v -> sendEmail(examLog));
+
+        askInAppReview();
     }
 
     @NonNull
@@ -141,5 +151,31 @@ public class HistoryDetailActivity extends AppCompatActivity {
         emailIntent.putExtra(Intent.EXTRA_TEXT, text);
 
         startActivity(Intent.createChooser(emailIntent, "Send Email Using: "));
+    }
+
+    private void askInAppReview(){
+        ReviewContext context = new ReviewContext(new HistoryReviewStrategy());
+        boolean showReview = context.execute(this);
+        if(!showReview)
+            return;
+
+        // Show review
+        ReviewManager manager = ReviewManagerFactory.create(this);
+        Task<ReviewInfo> request = manager.requestReviewFlow();
+        request.addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                ReviewInfo reviewInfo = task.getResult();
+                Task<Void> flow = manager.launchReviewFlow(HistoryDetailActivity.this, reviewInfo);
+                flow.addOnCompleteListener(finishedTask -> Toast.makeText(HistoryDetailActivity.this, "Thanks for your review", Toast.LENGTH_SHORT).show());
+            } else {
+                Log.w(HistoryDetailActivity.this.getLocalClassName(), "Unable to start review activity");
+            }
+        });
+
+        // Update review matrices
+        SharedPrefUtil prefUtil = SharedPrefUtil.newInstance(this);
+        prefUtil.putDate(R.string.pref_review_last_ask_date, LocalDate.now());
+        int askCount = prefUtil.getInt(R.string.pref_review_ask_count);
+        prefUtil.putInt(R.string.pref_review_ask_count, askCount+1);
     }
 }

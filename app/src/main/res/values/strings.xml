@@ -36,4 +36,7 @@
     <string name="history_delete_items">Delete selected exams?</string>
     <string name="delete">Delete</string>
     <string name="selection_tick">Selection Tick</string>
+
+    <string name="pref_review_last_ask_date">review last ask date</string>
+    <string name="pref_review_ask_count">review ask count</string>
 </resources>
