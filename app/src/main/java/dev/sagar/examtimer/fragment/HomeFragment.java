@@ -18,6 +18,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 import org.apache.commons.lang3.StringUtils;
 
 import dev.sagar.examtimer.R;
@@ -30,6 +32,8 @@ import dev.sagar.examtimer.utils.ConfigReader;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
+
+    private FirebaseAnalytics analytics;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -47,6 +51,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        analytics = FirebaseAnalytics.getInstance(requireActivity());
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.home_fragment, container, false);
     }
@@ -91,6 +96,8 @@ public class HomeFragment extends Fragment {
             Intent intent = new Intent(getActivity(), ExamActivity.class);
             intent.putExtras(basket);
             startActivity(intent);
+
+            analytics.logEvent(FirebaseAnalytics.Event.SELECT_ITEM, basket);
         });
     }
 }
