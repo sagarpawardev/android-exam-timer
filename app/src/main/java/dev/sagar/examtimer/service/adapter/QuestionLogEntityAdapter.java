@@ -1,4 +1,4 @@
-package dev.sagar.examtimer.history.adapter;
+package dev.sagar.examtimer.service.adapter;
 
 import androidx.annotation.NonNull;
 

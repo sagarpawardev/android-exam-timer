@@ -12,10 +12,10 @@
         android:theme="@style/AppTheme"
         android:name=".ExamTimerApplication">
         <activity
-            android:name=".history.HistoryDetailActivity"
+            android:name=".activity.HistoryDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".activity.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ExamActivity" />
+        <activity android:name=".activity.ExamActivity" />
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package dev.sagar.examtimer.history;
+package dev.sagar.examtimer.service;
 
 import static dev.sagar.examtimer.Constants.PROP_MOCK_SERVICES;
 
@@ -20,8 +20,8 @@ import dev.sagar.examtimer.db.entity.ExamLogEntity;
 import dev.sagar.examtimer.db.entity.ExamLogEntityDao;
 import dev.sagar.examtimer.db.entity.QuestionLogEntity;
 import dev.sagar.examtimer.db.entity.QuestionLogEntityDao;
-import dev.sagar.examtimer.history.adapter.ExamLogEntityAdapter;
-import dev.sagar.examtimer.history.adapter.QuestionLogEntityAdapter;
+import dev.sagar.examtimer.service.adapter.ExamLogEntityAdapter;
+import dev.sagar.examtimer.service.adapter.QuestionLogEntityAdapter;
 import dev.sagar.examtimer.pojo.ExamLog;
 import dev.sagar.examtimer.utils.ConfigReader;
 

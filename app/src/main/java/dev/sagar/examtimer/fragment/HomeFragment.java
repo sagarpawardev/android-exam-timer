@@ -1,4 +1,4 @@
-package dev.sagar.examtimer;
+package dev.sagar.examtimer.fragment;
 
 import static dev.sagar.examtimer.Constants.PROP_HOME_MAX_QUESTION;
 
@@ -20,6 +20,8 @@ import android.widget.Toast;
 
 import org.apache.commons.lang3.StringUtils;
 
+import dev.sagar.examtimer.R;
+import dev.sagar.examtimer.activity.ExamActivity;
 import dev.sagar.examtimer.utils.ConfigReader;
 
 /**

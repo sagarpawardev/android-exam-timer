@@ -1,4 +1,4 @@
-package dev.sagar.examtimer;
+package dev.sagar.examtimer.activity;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -19,8 +19,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import dev.sagar.examtimer.history.ExamLogService;
-import dev.sagar.examtimer.history.HistoryDetailActivity;
+import dev.sagar.examtimer.R;
+import dev.sagar.examtimer.service.ExamLogService;
 import dev.sagar.examtimer.pojo.ExamLog;
 import dev.sagar.examtimer.utils.CountUpTimer;
 

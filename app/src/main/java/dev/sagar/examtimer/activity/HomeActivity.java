@@ -1,4 +1,4 @@
-package dev.sagar.examtimer;
+package dev.sagar.examtimer.activity;
 
 import android.os.Bundle;
 
@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import dev.sagar.examtimer.history.HistoryListFragment;
+import dev.sagar.examtimer.fragment.HomeFragment;
+import dev.sagar.examtimer.R;
+import dev.sagar.examtimer.fragment.HistoryListFragment;
 
 
 public class HomeActivity extends AppCompatActivity {

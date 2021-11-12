@@ -1,4 +1,4 @@
-package dev.sagar.examtimer.history;
+package dev.sagar.examtimer.adapter;
 
 import static java.time.format.FormatStyle.LONG;
 
@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Set;
 
 import dev.sagar.examtimer.R;
+import dev.sagar.examtimer.activity.HistoryDetailActivity;
 import dev.sagar.examtimer.pojo.ExamLog;
 import dev.sagar.examtimer.utils.DurationUtil;
 

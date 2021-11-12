@@ -1,4 +1,4 @@
-package dev.sagar.examtimer.history;
+package dev.sagar.examtimer.activity;
 
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 
@@ -26,6 +26,7 @@ import java.util.TimeZone;
 
 import dev.sagar.examtimer.Constants;
 import dev.sagar.examtimer.R;
+import dev.sagar.examtimer.service.ExamLogService;
 import dev.sagar.examtimer.pojo.ExamLog;
 import dev.sagar.examtimer.utils.DurationUtil;
 
