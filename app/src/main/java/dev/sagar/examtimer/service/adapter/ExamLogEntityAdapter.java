@@ -35,6 +35,7 @@ public class ExamLogEntityAdapter implements BaseServiceAdapter{
         entity.setStartTime(getLongDateTime(examLog.getStartDateTime()));
         entity.setEndTime(getLongDateTime(examLog.getEndDateTime()));
         entity.setQuestionAttempted(examLog.getQuestionsAttempted());
+        entity.setActiveTime(examLog.getActiveTime().toMillis());
         return entity;
     }
 

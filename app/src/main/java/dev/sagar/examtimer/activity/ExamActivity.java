@@ -29,6 +29,7 @@ public class ExamActivity extends AppCompatActivity {
     private CountUpTimer prevTimer = null;
     private CountUpTimer[] timers;
     private LocalDateTime startTime;
+    private long backPressedTime;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -148,7 +149,11 @@ public class ExamActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            showConfirmationDialog();
+            return;
+        }
+        backPressedTime = System.currentTimeMillis();
     }
 
     public void showConfirmationDialog(){
