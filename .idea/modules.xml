@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Exam_Timer.iml" filepath="$PROJECT_DIR$/.idea/modules/Exam_Timer.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Exam_Timer.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Exam_Timer.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Exam_Timer.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Exam_Timer.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Exam_Timer.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Exam_Timer.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Exam_Timer.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Exam_Timer.app.unitTest.iml" />
     </modules>
   </component>
 </project>
