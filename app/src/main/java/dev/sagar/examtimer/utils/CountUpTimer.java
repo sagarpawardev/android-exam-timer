@@ -30,13 +30,17 @@ public class CountUpTimer {
     CountDownTimer timer = null;
     private final Drawable drawablePlay, drawablePause;
 
-    public CountUpTimer(Context context, View grid){
+    public CountUpTimer(Context context, View grid) {
+        this(context, grid, 0);
+    }
+
+    public CountUpTimer(Context context, View grid, int offset){
         format = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
         this.greenColor = ResourcesCompat.getColor(context.getResources(), R.color.greenColor, null);
         this.orangeColor = ResourcesCompat.getColor(context.getResources(), R.color.orangeColor, null);
         format.setTimeZone(TimeZone.getTimeZone("UTC"));
         timeLeft = MAX_TIME;
-        timeSpent = 0;
+        timeSpent = offset;
         this.grid = grid;
 
         if(grid.findViewById(R.id.tv_time) != null){
@@ -79,13 +83,21 @@ public class CountUpTimer {
         timer.start();
     }
 
+    public void setTimeSpent(long timeSpent) {
+        this.timeSpent = timeSpent;
+        String strTime = format.format(timeSpent);
+        tvTime.setText(strTime);
+    }
+
     public long getSpentTime(){
         return timeSpent;
     }
 
     public void pause(){
-        timer.cancel();
-        timer = null;
+        if(timer!=null) {
+            timer.cancel();
+            timer = null;
+        }
         isRunning = false;
         this.grid.setBackgroundColor(greenColor);
         tvTime.setCompoundDrawables(drawablePause, null, null, null);

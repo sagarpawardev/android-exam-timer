@@ -3,28 +3,36 @@ package dev.sagar.examtimer.activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.io.Serializable;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 import dev.sagar.examtimer.R;
+import dev.sagar.examtimer.converter.TimerQuestionStateConverter;
+import dev.sagar.examtimer.dto.ExamStateDto;
+import dev.sagar.examtimer.dto.QuestionStateDto;
 import dev.sagar.examtimer.service.ExamLogService;
 import dev.sagar.examtimer.pojo.ExamLog;
 import dev.sagar.examtimer.utils.CountUpTimer;
 
 public class ExamActivity extends AppCompatActivity {
+
+    private static final String EXAM_STATE = "keyExamState";
 
     private CountUpTimer prevTimer = null;
     private CountUpTimer[] timers;
@@ -86,6 +94,48 @@ public class ExamActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        Serializable examStateSerializable = savedInstanceState.getSerializable(EXAM_STATE);
+        if(examStateSerializable instanceof ExamStateDto){
+            ExamStateDto examState = (ExamStateDto) examStateSerializable;
+
+            //Add start time
+            startTime = examState.getStartTime();
+
+            //Reload timers
+            List<QuestionStateDto> questionStateList = examState.getQuestionStateList();
+            if(questionStateList.size() == this.timers.length){
+                for(int i=0; i<questionStateList.size(); i++){
+                    QuestionStateDto questionState = questionStateList.get(i);
+                    this.timers[i].setTimeSpent(questionState.getTimeSpent());
+                    if(questionState.isRunning()) {
+                        this.prevTimer = this.timers[i];
+                        this.timers[i].start();
+                    }
+                    if(questionState.isVisited() && !questionState.isRunning()){
+                        this.timers[i].pause();
+                    }
+                }
+            }
+            else{
+                Log.e("ExamActivity", String.format("Timer and saved state size doesn't match (timers:%s, savedState:%s)", this.timers.length, questionStateList.size()));
+            }
+        }
+
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        ExamStateDto examState = new ExamStateDto();
+        List<QuestionStateDto> questionState = TimerQuestionStateConverter.toQuestionState(this.timers);
+        examState.setQuestionStateList(questionState);
+        examState.setStartTime(startTime);
+        outState.putSerializable(EXAM_STATE, examState);
+    }
 
     class TimerOnClickListener implements View.OnClickListener {
         private final CountUpTimer timer;
