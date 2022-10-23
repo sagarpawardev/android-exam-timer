@@ -92,7 +92,9 @@ public class HistoryListFragment extends Fragment {
                     return;
                 }
 
-                requireActivity().finish();
+                if(getActivity() != null) {
+                    requireActivity().finish();
+                }
             }
         });
 
